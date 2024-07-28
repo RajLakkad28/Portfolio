@@ -10,100 +10,135 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            background-color: #f0f0f0;
         }
 
         header {
-            background: #333;
+            background-color: #333;
             color: white;
-            padding: 10px 0;
+            padding: 20px;
             text-align: center;
         }
 
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
+        .profile img {
+            width: 100px;
+            border-radius: 50%;
         }
 
-        nav ul li {
-            margin: 0 15px;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-        }
-
-        section {
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-        }
-
-        form input, form textarea {
-            width: 80%;
-            padding: 10px;
+        .profile h1 {
             margin: 10px 0;
         }
 
-        form button {
-            padding: 10px 20px;
-            background: #333;
+        .profile p {
+            margin: 5px 0;
+        }
+
+        .profile button {
+            background-color: #007BFF;
             color: white;
             border: none;
+            padding: 10px 20px;
             cursor: pointer;
+            border-radius: 5px;
+        }
+
+        section {
+            margin: 20px;
+        }
+
+        section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .project, .skills, .education-item, .links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .project img, .skills img, .links img {
+            width: 50px;
+            height: 50px;
+            margin: 10px;
+        }
+
+        .project h3 {
+            margin: 10px 0;
+        }
+
+        .project p, .education-item p {
+            margin: 5px 0;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
         }
     </style>
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="profile">
+            <img src="profile.jpg" alt="Profile Picture">
+            <h1>Your Name</h1>
+            <p>Full Stack Developer</p>
+            <p>Hello! I'm a full stack developer from [Location]. Specializing in web development and passionate about technology.</p>
+            <button onclick="window.location.href='resume.pdf'">Resume</button>
+        </div>
     </header>
-    <section id="home">
-        <h1>Welcome to My Portfolio</h1>
-        <p>This is the home section.</p>
-    </section>
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Write about yourself here.</p>
-    </section>
-    <section id="skills">
-        <h2>My Skills</h2>
-        <p>List your skills here.</p>
-    </section>
     <section id="projects">
         <h2>Projects</h2>
-        <p>Showcase your projects here.</p>
+        <div class="project">
+            <img src="project1.jpg" alt="Project Screenshot">
+            <h3>Project Name</h3>
+            <p>Project Description</p>
+            <a href="https://github.com/username/project">Github</a>
+            <a href="https://liveproject.com">Live</a>
+        </div>
+        <!-- Repeat project structure for more projects -->
     </section>
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <form id="contact-form">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send</button>
-        </form>
+    <section id="skills">
+        <h2>Technology & Tools</h2>
+        <div class="skills">
+            <img src="html5.png" alt="HTML5">
+            <img src="css3.png" alt="CSS3">
+            <img src="javascript.png" alt="JavaScript">
+            <!-- Repeat for more skills -->
+        </div>
+    </section>
+    <section id="education">
+        <h2>Education</h2>
+        <div class="education-item">
+            <h3>Bachelor in Computer Engineering</h3>
+            <p>XYZ University (2021 - Present)</p>
+        </div>
+        <div class="education-item">
+            <h3>12th Board</h3>
+            <p>ABC School (2019 - 2021)</p>
+        </div>
+    </section>
+    <section id="links">
+        <h2>Links</h2>
+        <div class="links">
+            <a href="https://instagram.com"><img src="instagram.png" alt="Instagram"></a>
+            <a href="https://linkedin.com"><img src="linkedin.png" alt="LinkedIn"></a>
+            <a href="https://github.com"><img src="github.png" alt="GitHub"></a>
+            <!-- Repeat for more links -->
+        </div>
     </section>
     <footer>
-        <p>&copy; 2024 Your Name. All rights reserved.</p>
+        <p>Thanks for visit</p>
     </footer>
     <script>
+        // This script handles form submission or any other interactivity
         document.getElementById('contact-form').addEventListener('submit', function(event) {
             event.preventDefault();
             alert('Form submitted!');
